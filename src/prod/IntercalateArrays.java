@@ -8,27 +8,32 @@ public class IntercalateArrays {
 
         System.out.println("Digite o tamanho dos vetores:");
         int N = scanner.nextInt();
-        int[] A = new int[N];
-        int[] B = new int[N];
 
-        System.out.println("Digite os elementos do vetor A:");
-        for (int i = 0; i < N; i++) {
-            A[i] = scanner.nextInt();
-        }
-
-        System.out.println("Digite os elementos do vetor B:");
-        for (int i = 0; i < N; i++) {
-            B[i] = scanner.nextInt();
-        }
+        int[] A = readArray(scanner, N, "A");
+        int[] B = readArray(scanner, N, "B");
 
         int[] C = intercalateArrays(A, B);
 
         System.out.println("Vetor resultante após intercalação:");
-        for (int num : C) {
-            System.out.print(num + " ");
-        }
+        printArray(C);
 
         scanner.close();
+    }
+
+    private static int[] readArray(Scanner scanner, int size, String name) {
+        System.out.println("Digite os elementos do vetor " + name + ":");
+        int[] array = new int[size];
+        for (int i = 0; i < size; i++) {
+            array[i] = scanner.nextInt();
+        }
+        return array;
+    }
+
+    private static void printArray(int[] array) {
+        for (int num : array) {
+            System.out.print(num + " ");
+        }
+        System.out.println();
     }
 
     public static int[] intercalateArrays(int[] A, int[] B) {
