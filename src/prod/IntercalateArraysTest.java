@@ -6,7 +6,7 @@ import org.junit.Test;
 public class IntercalateArraysTest {
 
     @Test
-    public void testIntercalateDifferentLengths() {
+    public void testIntercalateSizeDiff() {
         int[] A = {5, 10, 20, 30, 40, 50};
         int[] B = {6, 3, 8, 2, 0, 60};
         int[] expected = {5, 6, 10, 3, 20, 8, 30, 2, 40, 0, 50, 60};
